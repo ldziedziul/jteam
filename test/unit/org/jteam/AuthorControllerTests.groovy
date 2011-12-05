@@ -1,6 +1,6 @@
 package org.jteam
 
-import grails.test.ControllerUnitTestCase
+import grails.test.*
 
 class AuthorControllerTests extends ControllerUnitTestCase {
    protected void setUp() {
