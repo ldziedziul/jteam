@@ -45,9 +45,9 @@
           <td><g:link action="show"
                       id="${authorInstance.id}">${fieldValue(bean: authorInstance, field: "id")}</g:link></td>
 
-          <td>${fieldValue(bean: authorInstance, field: "firstname")}</td>
+          <td><jteam:hello>${fieldValue(bean: authorInstance, field: "firstname")}</jteam:hello></td>
 
-          <td>${fieldValue(bean: authorInstance, field: "lastname")}</td>
+          <td><jteam:hello happy="true">${fieldValue(bean: authorInstance, field: "lastname")}</jteam:hello></td>
 
           <td>${fieldValue(bean: authorInstance, field: "nip")}</td>
 
