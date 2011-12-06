@@ -4,6 +4,8 @@ class AuthorController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+    def authorService
+
     def index = {
         redirect(action: "list", params: params)
     }
@@ -21,7 +23,7 @@ class AuthorController {
 
     def save = {
         def authorInstance = new Author(params)
-        if (authorInstance.save(flush: true)) {
+        if (authorService.save(authorInstance)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'author.label', default: 'Author'), authorInstance.id])}"
             redirect(action: "show", id: authorInstance.id)
         }
@@ -65,7 +67,7 @@ class AuthorController {
                 }
             }
             authorInstance.properties = params
-            if (!authorInstance.hasErrors() && authorInstance.save(flush: true)) {
+            if (!authorInstance.hasErrors() && authorService.save(authorInstance)) {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'author.label', default: 'Author'), authorInstance.id])}"
                 redirect(action: "show", id: authorInstance.id)
             }
