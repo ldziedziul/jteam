@@ -47,7 +47,7 @@
                                                 default="Date Created"/>:</label>
           </td>
           <td valign="top" class="value ${hasErrors(bean: blogInstance, field: 'dateCreated', 'errors')}">
-            <g:datePicker name="dateCreated" value="${blogInstance?.dateCreated}"/>
+            <g:datePicker name="dateCreated" precision="day" value="${blogInstance?.dateCreated}"/>
 
           </td>
         </tr>
@@ -58,7 +58,7 @@
                                            default="Author"/>:</label>
           </td>
           <td valign="top" class="value ${hasErrors(bean: blogInstance, field: 'author', 'errors')}">
-            <g:select name="author.id" from="${org.jteam.Author.list()}" optionKey="id"
+            <g:select name="author.id" from="${org.jteam.Author.list()}" optionKey="id" optionValue="fullName"
                       value="${blogInstance?.author?.id}"/>
 
           </td>

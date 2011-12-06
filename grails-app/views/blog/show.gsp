@@ -57,7 +57,7 @@
                                                    default="Author"/>:</td>
 
           <td valign="top" class="value"><g:link controller="author" action="show"
-                                                 id="${blogInstance?.author?.id}">${blogInstance?.author?.encodeAsHTML()}</g:link></td>
+                                                 id="${blogInstance?.author?.id}">${blogInstance?.author?.fullName.encodeAsHTML()}</g:link></td>
 
         </tr>
 

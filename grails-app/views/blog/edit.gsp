@@ -62,7 +62,7 @@
                                            default="Author"/>:</label>
           </td>
           <td valign="top" class="value ${hasErrors(bean: blogInstance, field: 'author', 'errors')}">
-            <g:select name="author.id" from="${org.jteam.Author.list()}" optionKey="id"
+            <g:select name="author.id" from="${org.jteam.Author.list()}" optionValue="fullName" optionKey="id"
                       value="${blogInstance?.author?.id}"/>
 
           </td>

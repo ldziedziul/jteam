@@ -25,9 +25,6 @@
       <thead>
       <tr>
 
-        <g:sortableColumn property="id" title="Id"
-                          titleKey="blog.id"/>
-
         <g:sortableColumn property="topic" title="Topic"
                           titleKey="blog.topic"/>
 
@@ -43,13 +40,11 @@
         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 
           <td><g:link action="show"
-                      id="${blogInstance.id}">${fieldValue(bean: blogInstance, field: "id")}</g:link></td>
+                      id="${blogInstance.id}">${fieldValue(bean: blogInstance, field: "topic")}</g:link></td>
 
-          <td>${fieldValue(bean: blogInstance, field: "topic")}</td>
+          <td><g:formatDate date="${blogInstance.dateCreated}" formatName="format.date"/></td>
 
-          <td><g:formatDate date="${blogInstance.dateCreated}"/></td>
-
-          <td>${fieldValue(bean: blogInstance, field: "author")}</td>
+          <td>${fieldValue(bean: blogInstance.author, field: "fullName")}</td>
 
         </tr>
       </g:each>
